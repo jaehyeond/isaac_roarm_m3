@@ -1,0 +1,31 @@
+[project]
+name = "isaac-roarm-m3"
+version = "0.1.0"
+description = "Reinforcement Learning with the RoArm-M3-Pro in Isaac Lab"
+readme = "README.md"
+requires-python = "==3.11.*"
+dependencies = []
+
+[project.scripts]
+train = "isaac_roarm_m3.scripts.rsl_rl.train:main"
+play = "isaac_roarm_m3.scripts.rsl_rl.play:main"
+zero_agent = "isaac_roarm_m3.scripts.zero_agent:main"
+
+[tool.uv]
+index-strategy = "unsafe-best-match"
+environments = [
+  "sys_platform == 'linux' and implementation_name == 'cpython' and python_version == '3.11'",
+]
+
+[[tool.uv.index]]
+url = "https://pypi.nvidia.com/"
+
+[[tool.uv.index]]
+url = "https://download.pytorch.org/whl/cu128"
+
+[build-system]
+requires = ["setuptools>=65.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
