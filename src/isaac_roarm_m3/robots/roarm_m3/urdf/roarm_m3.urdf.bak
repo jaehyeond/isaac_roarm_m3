@@ -203,13 +203,13 @@
   <limit lower="-1.0" upper="2.95" effort="1.9" velocity="3.14"/>
 </joint>
 
-<!-- Joint 3: Wrist pitch (limits extended to ±110° per CLAUDE.md HW spec; v6 action up to 108.7°) -->
+<!-- Joint 3: Wrist pitch -->
 <joint name="link3_to_link4" type="revolute">
   <origin xyz="0.0 -0.144586 0" rpy="0 0 0"/>
   <parent link="link3"/>
   <child link="link4"/>
   <axis xyz="0.0 0.0 1.0"/>
-  <limit lower="-1.92" upper="1.92" effort="1.9" velocity="3.14"/>
+  <limit lower="-1.5708" upper="1.5708" effort="1.9" velocity="3.14"/>
 </joint>
 
 <!-- Joint 4: Wrist roll -->
@@ -227,7 +227,7 @@
   <parent link="link5"/>
   <child link="gripper_link"/>
   <axis xyz="0.0 0.0 1.0"/>
-  <limit lower="0" upper="1.571" effort="2.5" velocity="3.14"/>
+  <limit lower="0" upper="1.5" effort="2.5" velocity="3.14"/>
 </joint>
 
 <!-- Fixed: wrist to hand TCP -->
